@@ -1,0 +1,16 @@
+phase: DEP
+workers:
+  A:
+    status: pending
+    skeptic_rounds: 0
+  B:
+    status: pending
+    skeptic_rounds: 0
+  C:
+    status: pending
+    skeptic_rounds: 0
+  D:
+    status: pending
+    skeptic_rounds: 0
+consolidation:
+  status: pending

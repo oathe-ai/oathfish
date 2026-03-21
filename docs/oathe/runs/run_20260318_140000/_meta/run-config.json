@@ -1,0 +1,10 @@
+{
+  "run_id": "run_20260318_140000",
+  "topic": "Grounding OathFish predictive swarm intelligence: superforecasting calibration, multi-agent debate for prediction, ensemble methods in collective intelligence, adversarial debiasing in group deliberation, agent-based social simulation for forecasting",
+  "papers_requested": 5,
+  "max_rounds": 3,
+  "debate_format": "ffa",
+  "judges": 2,
+  "timestamp_start": "2026-03-18T14:00:00Z",
+  "context": "OathFish is a two-layer prediction engine: deep deliberation (30 archetype agents reasoning across structured rounds) + mass amplification (1500 stateless batch calls). We need research grounding for: (1) persistent archetype calibration across runs, (2) adversarial debate structure for debiasing, (3) ensemble prediction combining qualitative depth + quantitative breadth, (4) what makes multi-agent predictions accurate, (5) cascade/network effect modeling in social dynamics"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "oathfish",
+  "version": "0.1.8",
+  "description": "Claude-Native Swarm Intelligence Engine -- multi-round deliberation between 30 archetype agents with mass amplification for structured ensemble predictions",
+  "author": {
+    "name": "Oathe"
+  },
+  "homepage": "https://github.com/oathe/oathfish",
+  "mcpServers": {
+    "oathfish-engine": {
+      "command": "uv",
+      "args": ["run", "--with", "mcp[cli]", "--with", "pydantic", "--directory", "${CLAUDE_PLUGIN_ROOT}", "python", "-m", "engine.server"],
+      "env": {
+        "OATHFISH_DATA_DIR": "${CLAUDE_PLUGIN_DATA}/runs",
+        "OATHFISH_PLUGIN_ROOT": "${CLAUDE_PLUGIN_ROOT}"
+      }
+    }
+  }
+}

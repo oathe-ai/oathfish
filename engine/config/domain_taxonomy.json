@@ -1,0 +1,48 @@
+{
+  "domains": {
+    "POLICY": {
+      "keywords": ["regulation", "law", "government", "policy", "election",
+                    "legislation", "ban", "mandate", "congress", "senate",
+                    "court", "ruling", "executive order", "sanctions", "tariff",
+                    "treaty", "vote", "ballot", "referendum", "political"],
+      "description": "Government action, regulation, political outcomes"
+    },
+    "ECONOMICS": {
+      "keywords": ["market", "economy", "revenue", "GDP", "stock", "funding",
+                    "IPO", "recession", "inflation", "interest rate", "bond",
+                    "profit", "valuation", "acquisition", "merger", "startup",
+                    "venture capital", "bankruptcy", "trade", "fiscal"],
+      "description": "Markets, business, financial outcomes"
+    },
+    "TECHNOLOGY": {
+      "keywords": ["technology", "software", "AI", "adoption", "launch",
+                    "product", "platform", "app", "semiconductor", "chip",
+                    "cloud", "SaaS", "open source", "API", "model",
+                    "algorithm", "computing", "robot", "autonomous", "digital"],
+      "description": "Technology adoption, product launches, innovation"
+    },
+    "SCIENCE": {
+      "keywords": ["science", "research", "clinical", "health", "medical",
+                    "study", "vaccine", "disease", "trial", "FDA",
+                    "peer review", "publication", "lab", "genome", "protein",
+                    "cancer", "therapy", "diagnosis", "pharmaceutical", "drug"],
+      "description": "Scientific outcomes, medical, health events"
+    },
+    "ENVIRONMENT": {
+      "keywords": ["climate", "environment", "emission", "weather", "energy",
+                    "renewable", "carbon", "temperature", "sea level", "ice",
+                    "solar", "wind", "fossil fuel", "pollution", "wildfire",
+                    "hurricane", "flood", "drought", "biodiversity", "ecosystem"],
+      "description": "Climate, environmental, natural events"
+    },
+    "SOCIAL": {
+      "keywords": ["social", "culture", "consumer", "media", "public opinion",
+                    "trend", "demographic", "population", "migration", "protest",
+                    "movement", "entertainment", "sports", "brand", "sentiment",
+                    "lifestyle", "education", "inequality", "urbanization", "community"],
+      "description": "Social dynamics, cultural shifts, consumer behavior"
+    }
+  },
+  "min_keyword_matches": 2,
+  "case_sensitive": false
+}

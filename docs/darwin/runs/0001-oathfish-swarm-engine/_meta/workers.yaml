@@ -1,0 +1,128 @@
+workers:
+  A:
+    lens: "mcp-core"
+    focus: "MCP server core engines — state machine, deliberation (with split ArgumentPosition/PredictionPosition models), graph (with temporal tracking), amplification, metrics"
+    keywords:
+      - "state_machine"
+      - "deliberation_engine"
+      - "graph_engine"
+      - "amplification_engine"
+      - "metrics_engine"
+      - "Pydantic models"
+      - "ArgumentPosition"
+      - "PredictionPosition"
+      - "write-through persistence"
+    entry_points:
+      - "docs/darwin/runs/0001-oathfish-swarm-engine/_meta/feature-request.md §4.1 (MCP Server)"
+      - "references/raw/mcp.md"
+      - "references/analysis/mcp-analysis.md"
+    research_focus:
+      - "docs/oathe/runs/run_20260318_140000/papers/2305.14325-multiagent-debate.md (convergence detection, diversity tracking)"
+      - "docs/oathe/runs/run_20260318_140000/papers/2602.19520-calibration-decomposition.md (Brier scores, domain bias tracking)"
+      - "docs/oathe/runs/run_20260318_140000/synthesis/final-synthesis.md §3 Recommendations 1-2"
+    must_address:
+      - "SPEC-01 resolution: Split Position into ArgumentPosition (rounds 1-5) + PredictionPosition (round 6)"
+      - "AMB-01 resolution: Jaccard similarity for argument evolution tracking, diversity index for convergence"
+      - "7-phase state machine: INIT→UNDERSTAND→BASELINE_AMPLIFY→DELIBERATE→AMPLIFY→SYNTHESIZE→INTERACT→COMPLETE"
+      - "C-32: Diversity index tracking with premature consensus detection"
+
+  B:
+    lens: "mcp-research"
+    focus: "MCP server NEW engines mandated by research — calibration engine (5 tools), debiasing infrastructure, question competence classifier, baseline amplification tools"
+    keywords:
+      - "calibration_engine"
+      - "debiasing"
+      - "acquiescence"
+      - "domain_bias"
+      - "Brier score"
+      - "competence_classifier"
+      - "baseline_amplify"
+      - "holdout_validation"
+    entry_points:
+      - "docs/darwin/runs/0001-oathfish-swarm-engine/_meta/feature-request.md §6.1b (Research-Mandated Requirements)"
+      - "docs/darwin/runs/0001-oathfish-swarm-engine/_meta/research-driven-redesign.md §4 (Calibration Engine)"
+    research_focus:
+      - "docs/oathe/runs/run_20260318_140000/papers/2402.19379-silicon-crowd.md (acquiescence bias 57%, Brier scores, calibration indices)"
+      - "docs/oathe/runs/run_20260318_140000/papers/2602.19520-calibration-decomposition.md (4-component decomposition, domain bias, power analysis)"
+      - "docs/oathe/runs/run_20260318_140000/papers/2409.19839-forecastbench.md (Brier thresholds, ForecastBench submission)"
+      - "docs/oathe/runs/run_20260318_140000/synthesis/final-synthesis.md §3 Recommendations 2,3,5"
+    must_address:
+      - "C-26: A/B test infrastructure (baseline vs deliberation comparison)"
+      - "C-27: Per-domain acquiescence tracking and corrections from run 3+"
+      - "C-28: Dual-metric reporting (corrected + uncorrected Brier)"
+      - "C-31: Question competence classifier (in-domain vs out-of-domain)"
+      - "C-34: Holdout 20% of resolved predictions from calibration feedback"
+      - "C-35: ForecastBench submission pipeline"
+      - "Paper-calibration power analysis: 80% power at n=90/domain for d=0.3"
+      - "Paper-calibration resolution latency risk: include short-horizon bootstrap questions"
+
+  C:
+    lens: "orchestration"
+    focus: "Plugin scaffold, Claude agents (coordinator + archetype subagents + report analyst), skills (7 phase skills), commands, hooks, Team orchestration, arguments-only deliberation protocol"
+    keywords:
+      - "deliberation-coordinator"
+      - "archetype-agent"
+      - "report-analyst"
+      - "SKILL.md"
+      - "TeamCreate"
+      - "SendMessage"
+      - "plugin.json"
+      - "hooks"
+      - "structured_stubbornness"
+      - "arguments_only"
+    entry_points:
+      - "docs/darwin/runs/0001-oathfish-swarm-engine/_meta/feature-request.md §4.2-4.6 (Agents, Skills, Commands, Hooks, Plugin)"
+      - "references/raw/sub-agents.md"
+      - "references/analysis/sub-agents-analysis.md"
+      - "references/raw/agent-teams.md"
+      - "references/analysis/agent-teams-analysis.md"
+      - "references/raw/skills.md"
+      - "references/analysis/skills-analysis.md"
+    research_focus:
+      - "docs/oathe/runs/run_20260318_140000/papers/2305.14325-multiagent-debate.md (stubborn prompts, convergence dynamics, false consensus)"
+      - "docs/oathe/runs/run_20260318_140000/papers/2402.19379-silicon-crowd.md (no numbers during debate, acquiescence bias)"
+      - "docs/oathe/runs/run_20260318_140000/synthesis/final-synthesis.md §3 Recommendation 2 (arguments/predictions separation)"
+    must_address:
+      - "C-33: No numeric predictions shared until round 6 — enforced by PreToolUse hook"
+      - "Archetype subagents with memory:project, tiered models (opus/sonnet/haiku), maxTurns"
+      - "Structured stubbornness: each archetype stubborn on domain expertise"
+      - "Diversity monitoring: coordinator tracks argument theme diversity per round"
+      - "BASELINE_AMPLIFY phase skill: stateless amplification before deliberation"
+      - "7 skills total: oathfish, understand, baseline-amplify, deliberate, amplify, synthesize, interact"
+      - "TeammateIdle + TaskCompleted hooks for deliberation governance"
+
+  D:
+    lens: "domain-logic"
+    focus: "Archetype generation system (structural + topic-customized), runtime source grounding, Python SDK amplification engine (replaces bash), superforecaster methodology encoding, structural archetypes (Historian, Systems Thinker, Contrarian, Probabilist)"
+    keywords:
+      - "archetype_generation"
+      - "structural_archetypes"
+      - "grounding_ladder"
+      - "runtime_source_discovery"
+      - "superforecaster_methodology"
+      - "amplification_sdk"
+      - "json_schema"
+      - "persona_variation"
+      - "base_rate_anchor"
+      - "falsification_criteria"
+    entry_points:
+      - "docs/darwin/runs/0001-oathfish-swarm-engine/_meta/feature-request.md §4.3.2 (understand/SKILL.md), §4.3.4 (amplify/SKILL.md)"
+      - "references/raw/headless.md"
+      - "references/analysis/headless-analysis.md"
+    research_focus:
+      - "docs/oathe/runs/run_20260318_140000/papers/2411.10109-generative-agents-1000.md (persona fidelity, grounding ladder, 85% benchmark)"
+      - "docs/oathe/runs/run_20260318_140000/papers/2409.19839-forecastbench.md (superforecaster methodology, Brier thresholds)"
+      - "docs/oathe/runs/run_20260318_140000/synthesis/final-synthesis.md §3 Recommendations 4-5"
+      - "docs/darwin/runs/0001-oathfish-swarm-engine/_meta/research-driven-redesign.md §4.2.2 (archetype redesign)"
+    must_address:
+      - "C-29: Runtime source discovery during UNDERSTAND (web search for 3-5 sources per archetype)"
+      - "C-30: Superforecaster methodology in every archetype prompt (decompose, base rate, falsify)"
+      - "C-36: 4 structural archetypes (Historian, Systems Thinker, Contrarian, Probabilist) in every run"
+      - "C-37: Structural archetypes are epistemic lenses, not stakeholder personas"
+      - "Python SDK amplification: --json-schema, --system-prompt, --append-system-prompt, --resume SESSION_ID"
+      - "C-21 dual mode: stateless baseline + --resume post-deliberation"
+      - "Paper-persona grounding ladder: Rung 1 (synthetic) through Rung 4 (interview-grounded)"
+      - "MiroFish oasis_profile_generator.py patterns for persona richness"
+
+mode: population
+worker_count: 4

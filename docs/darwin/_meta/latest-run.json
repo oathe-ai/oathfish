@@ -1,0 +1,11 @@
+{
+  "run_id": "0001-oathfish-swarm-engine",
+  "run_dir": "docs/darwin/runs/0001-oathfish-swarm-engine",
+  "phase": "COMPLETE",
+  "description": "OathFish: Claude-Native Swarm Intelligence Engine (two-layer: Teams deliberation + claude -p mass amplification)",
+  "spec_status": "READY",
+  "feature_request_path": "docs/darwin/runs/0001-oathfish-swarm-engine/_meta/feature-request.md",
+  "spec_path": "docs/darwin/runs/0001-oathfish-swarm-engine/consolidated/spec.md",
+  "verdict": "FIXABLE",
+  "gaps_path": "docs/darwin/runs/0001-oathfish-swarm-engine/verify/gaps-C.md"
+}

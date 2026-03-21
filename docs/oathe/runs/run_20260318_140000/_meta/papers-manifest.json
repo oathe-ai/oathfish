@@ -1,0 +1,39 @@
+{
+  "papers": [
+    {
+      "id": "2305.14325",
+      "title": "Improving Factuality and Reasoning in Language Models through Multiagent Debate",
+      "perspective": "MULTI_AGENT_DEBATE",
+      "key_findings": "Multiple LLM instances proposing and debating responses over rounds converge to consensus. 'Stubborn' prompts lead to longer debates and better solutions. Debate improves factuality and mathematical reasoning. Society of minds approach works as orthogonal improvement to existing prompting.",
+      "relevance": "Core mechanism for OathFish deliberation rounds. Validates multi-round debate between agents. Convergence dynamics directly inform our convergence detection."
+    },
+    {
+      "id": "2402.19379",
+      "title": "Wisdom of the Silicon Crowd: LLM Ensemble Prediction Capabilities Rival Human Crowd Accuracy",
+      "perspective": "ENSEMBLE_FORECASTING",
+      "key_findings": "LLM ensemble of 12 models achieves Brier score 0.20 (human crowd: 0.19, not statistically different). Acquiescence bias: LLMs predict positive outcomes 57% of time. Exposure to human crowd median improves LLM accuracy 17-28%. Simple averaging of human+machine beats LLM's own update. Poor calibration across most models individually, better in aggregate.",
+      "relevance": "Validates ensemble approach. Quantifies calibration problems we must solve. Shows crowd wisdom works for LLMs. Warns about acquiescence bias in our archetypes."
+    },
+    {
+      "id": "2409.19839",
+      "title": "ForecastBench: Can LLMs Forecast?",
+      "perspective": "SUPERFORECASTERS_VS_LLM",
+      "key_findings": "Expert forecasters significantly outperform best LLMs (p<0.001). State-of-art LLMs perform only as well as median of inexperienced human forecasters. Dynamic benchmark with 1000 questions, no data leakage. Gap between LLMs and superforecasters highlights need for structured approaches beyond single-model prompting.",
+      "relevance": "Proves single LLMs cannot match superforecasters — validates need for structured deliberation + ensemble architecture. OathFish must close this gap through architecture, not just model capability."
+    },
+    {
+      "id": "2411.10109",
+      "title": "Generative Agent Simulations of 1,000 People",
+      "perspective": "PERSONA_FIDELITY",
+      "key_findings": "LLM agents based on qualitative interviews replicate participants' survey responses 85% as accurately as participants replicate their own answers 2 weeks later. Architecture reduces accuracy biases across racial and ideological groups vs demographic-only descriptions. Requires deep qualitative interviews, not just demographic prompts.",
+      "relevance": "Validates persona-based prediction. Shows qualitative depth (interviews/reasoning) > demographic prompts for accuracy. Directly supports our archetype depth approach over shallow persona generation."
+    },
+    {
+      "id": "2602.19520",
+      "title": "Decomposing Crowd Wisdom: Domain-Specific Calibration Dynamics in Prediction Markets",
+      "perspective": "CALIBRATION_SCIENCE",
+      "key_findings": "Calibration decomposes into 4 components explaining 87.3% of variance: universal horizon effect, domain intercepts, domain-by-horizon interactions, trade-size scale effect. Persistent underconfidence in political markets. Domain-agnostic models miss largest source of calibration variation. 292M trades across 327K contracts on Kalshi and Polymarket.",
+      "relevance": "Calibration is STRUCTURED, not random. Domain-specific biases are predictable. Our archetype calibration must be domain-aware. Validates our CALIBRATE phase approach — calibration per archetype per domain."
+    }
+  ]
+}
